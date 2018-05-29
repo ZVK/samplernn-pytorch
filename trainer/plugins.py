@@ -11,6 +11,7 @@ from torch.utils.trainer.plugins import LossMonitor
 
 from librosa.output import write_wav
 from matplotlib import pyplot
+from google.colab import files
 
 from glob import glob
 import os
@@ -132,6 +133,15 @@ class SaverPlugin(Plugin):
                 )
             )
             self._best_val_loss = cur_val_loss
+        #added by ZVK bellow
+        files.download(
+            os.path.join(
+                self.checkpoints_path,
+                self.best_pattern.format(
+                    epoch_index, self.trainer.iterations
+                )
+            )
+        )
 
     def _clear(self, pattern):
         pattern = os.path.join(self.checkpoints_path, pattern)
