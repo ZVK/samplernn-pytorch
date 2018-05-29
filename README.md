@@ -1,4 +1,4 @@
-# samplernn-pytorch
+# samplernn-pytorch (with modifications for running in Google Colab notebooks)
 
 A PyTorch implementation of [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](https://arxiv.org/abs/1612.07837).
 
